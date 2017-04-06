@@ -5,7 +5,7 @@
   "main": "src/start.js",
   "scripts": {
     "start": "node src/start.js",
-    "test": "tape 'test/**/*.js'",
+    "test": "istanbul cover tape 'test/**/*.js'",
     "watch": "nodemon src/start.js -e js,html,css",
     "build": "node src/database/build_database.js"
   },
@@ -29,10 +29,11 @@
     "pg": "^6.1.2",
     "request": "^2.81.0",
     "vision": "^4.1.0",
-    "yoti-node-sdk": "^1.0.2"
+    "yoti-node-sdk": "^1.0.2",
+    "env2": "^2.1.1"
   },
   "devDependencies": {
-    "env2": "^2.1.1",
+    "istanbul": "^0.4.5",
     "nodemon": "^1.11.0",
     "tape": "^4.6.3"
   },
