@@ -5,3 +5,9 @@ module.exports.fixDate = function (dashboardData) {
     return userData;
   });
 };
+
+module.exports.fixAccomDates = function (accomHistory) {
+  accomHistory.start_date = accomHistory.start_date__c.slice(8).concat(' ').concat(accomHistory.start_date__c.slice(5,7)).concat(' ').concat(accomHistory.start_date__c.slice(0,4));
+  accomHistory.end_date = accomHistory.end_date__c.slice(8).concat(' ').concat(accomHistory.end_date__c.slice(5,7)).concat(' ').concat(accomHistory.end_date__c.slice(0,4))
+  return accomHistory;
+}
