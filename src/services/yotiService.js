@@ -13,7 +13,7 @@ module.exports.getClient = function() {
     const CLIENT_SDK_ID = process.env.SDK;
     let PEM;
     if (isDevelopment) {
-      PEM = fs.readFileSync(path.join(__dirname, '../../key_pem/help-access-security.pem'));
+      PEM = fs.readFileSync(path.join(__dirname, '../../keys_tls/centrepoint-access-security.pem'));
     }
     else {
       PEM = process.env.PEM;
