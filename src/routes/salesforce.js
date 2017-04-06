@@ -38,7 +38,6 @@ module.exports = {
             accomHistory = res.records[0]._fields;
             accomHistory = dateHelper.fixAccomDates(accomHistory);
             accomHistory.name = name;
-            console.log('Accommodation History is: ', accomHistory);
             reply.view('data', accomHistory);
           });
         } else {
