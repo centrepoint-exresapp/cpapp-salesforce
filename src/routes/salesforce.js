@@ -22,17 +22,17 @@ module.exports = {
         clientId: process.env.SALESFORCE_KEY,
         clientSecret: process.env.SALESFORCE_SECRET,
         redirectUri: process.env.SF_REDIRECT,
-        environment: 'sandbox',  // optional, salesforce 'sandbox' or 'production', production default
-        mode: 'single' // optional, 'single' or 'multi' user mode, multi default
+        environment: 'sandbox',
+        mode: 'single'
       });
 
       org.authenticate({ username: username, password: password, securityToken: securityToken }, function(err, resp) {
         if(!err) {
-          console.log('callback was called');
-          console.log('callback response object: ', resp);
-          org.query({ query: `SELECT Contact.FirstName, Contact.LastName FROM Contact WHERE Contact.FirstName='Andy'` }, function(err, res) {
+          org.query({ query: `SELECT Start_Date__c, End_Date__c FROM Bedspace_Status__c WHERE Client__c IN (SELECT Id FROM Contact WHERE Contact.FirstName='Andy')`}, function(err, res) {
             if(err) return console.error(err);
-            else return console.log(res.records);
+            else
+            console.log(res.records[0]._fields);
+            return reply.view('data', res.records[0]._fields);
           });
         } else {
           console.log('Error: ' + err.message);
@@ -41,6 +41,3 @@ module.exports = {
     }
     // }
 };
-
-// SELECT Name FROM Account LIMIT 1
-// SELECT Name, Phone FROM Account WHERE (Name='SFDC Computing' AND NumberOfEmployees>25)
