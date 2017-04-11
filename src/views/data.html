@@ -3,12 +3,42 @@
 
 <div class="container">
     <div class="row">
+      <p class="center-align">{{name}}, thanks for contacting Centrepoint</p>
+      {{#if rentalHistory}}
         <div class="col s12">
-            <h4 class="center-align">Accommodation history</h4>
-            <p class="center-align">Hi {{name}}, you lived at Centrepoint from {{start_date}} to {{end_date}}.</p>
+            <p class="center-align">Accommodation history: you lived at Centrepoint from {{accomHistory.start_date}} to {{accomHistory.end_date}}.</p>
         </div>
+      {{/if}}
+
+      {{#if ticket}}
+        <ul class="center-align">You requested the following:
+        {{#if rentalArrears}}
+          <li class="center-align"><i class="tiny material-icons padding-right">done</i> A rental arrears report</li>
+        {{/if}}
+
+        {{#if rentalReference}}
+          <li class="center-align"><i class="tiny material-icons padding-right">done</i> A rental reference</li>
+        {{/if}}
+
+        {{#if otherRequests}}
+          <li class="center-align"><i class="tiny material-icons padding-right">done</i> {{otherRequests}}</li>
+        {{/if}}
+
+        {{#if email}}
+          <p class="center-align">We will repond using the email address you gave us:<br>
+          <span style="font-weight:bold;">{{email}}</span>
+          <br>You should hear from us within 24 hours</p>
+        {{/if}}
+
+        {{#if mail}}
+          <p class="center-align">We will send a letter to you at the address you gave us:<br>
+          <span style="font-weight:bold;">{{mail}}</span>
+          <br>Please note that letters take about five working days</p>
+        {{/if}}
+      {{/if}}
+
         <div>
-          <p class="center-align" style='color:gray;'>To protect your personal information, <br>please log out when you're done.</p>
+          <p class="center-align" style='color:gray;font-size:12px;'>To protect your personal information, <br>please log out when you're done.</p>
         </div>
     </div>
 </div>
