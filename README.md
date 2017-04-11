@@ -3,115 +3,63 @@
 
 # Centrepoint Alumni help
 
-An app to allow former Centrepoint residents request their Centrepoint housing information, and to allow administrators to view and manage requests.
+An app to allow former Centrepoint residents access their Centrepoint housing information, which comes directly from Salesforce where available, or raises a ticket in Salesforce if the information requested isn't kept in the system (eg rental references).
 
 ## User stories: ex-resident
 
 **As a** former resident of Centrepoint  
-**I would like** to access Centrepoint alumni network  
-**so that** I can request my former address with a verified ID    
+**I would like** to have access to information held by Centrepoint  
+**so that** I can request my former address securely
 
 **As a** former resident of Centrepoint  
-**I would like** the app to look similar to The Point  
-**so that** I know that they are both part of the Centrepoint ex-resident network  
+**I would like** all services to be available in one place  
+**so that** I can get my information easily  
 
 **As a** former resident of Centrepoint  
 **I would like** the app to work on both mobile and desktop  
-**so that** access it regardless of whichever platform I have access to  
+**so that** access it regardless of whichever platform I'm using  
 
 **As a** former resident of Centrepoint  
 **I would like** to know what type of information I can request  
-**so that** I don't waste time with Yoti authentication  
+**so that** I don't waste time with Yoti authentication if it's not going to give me what I need  
 
 **As a** former resident of Centrepoint  
 **I would like** to log in to Yoti quickly and easily  
-**so that** I am authenticated with Centrepoint  
-
-**As an** authenticated user  
-**I want like** to know that my authentication was successful  
-**so that** I can be confident that I will receive the requested data  
-
-**As a** former resident of Centrepoint  
-**I would like** to be able to see options to request my address history, a tenancy reference and my rent arrears report  
-**so that** I get the document I require for housing and benefits  
-
-**As a** former resident of Centrepoint  
-**I would like** to have the option of entering additional information  
-**so that** I ensure I get the relevant data  
+**so that** I can get my information without a big hassle  
 
 **As a** former resident of Centrepoint  
 **I would like** to have options to be contacted by mail or e-mail  
-**so that** receive the requested information quickly and reliably  
+**so that** receive the requested information how I choose  
 
 **As a** former resident of Centrepoint  
 **I would like** the app to look simple, and the form data to be easy to input  
-**so that** be confident that I have put in all the data correctly
+**so that** I can get my information on the move
 
 **As a** former resident of Centrepoint  
 **I would like** to know long it would take for Centrepoint to contact me  
-**so that** I know when I will get my information (and that they will get in touch by phone if there are any questions)  
+**so that** if my information isn't available right away, I know when it will be available  
 
 **As a** former resident of Centrepoint  
 **I would like** to stay logged in until I log out  
 **so that** I am authenticated with the app when (and only when) I'm using it
 
-## User stories: admin
+## User stories: Centrepoint staff
 
-**As a** Centrepoint admin  
-**I would like** to access the ex-resident app dashboard  
-**so that** I can view all requests for housing data from ex-residents
+**As a** Centrepoint staff member  
+**I would like** to reduce the complications of getting ex-residents their information  
+**so that** they don't miss out on housing benefits or fall into arrears through delays
 
-**As a** Centrepoint admin  
-**I would like** to log in to Yoti quickly and easily  
-**so that** I am authenticated with Centrepoint
-
-**As a** Centrepoint admin  
-**I would like** to make sure that only administrators can view the dashboard  
-**so that** ex-residents data is not revealed to external visitors
-
-**As a** Centrepoint admin  
-**I would like** to see a list of all data requests from ex-residents  
-**so that** I know what requests have been made and need my attention
-
-**As a** Centrepoint admin  
-**I would like** to see which data requests from ex-residents are open and which closed  
-**so that** I know which requests to focus on
-
-**As a** Centrepoint admin  
-**I would like** to see when each of the requests was made  
-**so that** I know which requests to give priority to
-
-**As a** Centrepoint admin  
-**I would like** to be able to change a request status from open to closed once I have processed it  
-**so that** I know that it doesn't need my attention any more
-
-**As a** Centrepoint admin  
-**I would like** to be able to filter requests based on whether they are open or closed  
-**so that** I can see a list of all requests I am interested in more clearly
-
-**As a** Centrepoint admin  
-**I would like** to stay logged in until I log out  
-**so that** I am authenticated with the dashboard when (and only when) I'm using it
-
-**As a** Centrepoint admin  
-**I would like** to be able to add admin privileges to colleagues at Centrepoint  
-**so that** they can view and work on requests from the dashboard as well
-
-## Wireframes: ex-resident app
-
-<img src="./wireframes/wireframes-12.JPG" height="400"/>
-<img src="./wireframes/wireframes-34.JPG" height="400"/>
-
-## Wireframes: admin dashboard
-
-<img src="./wireframes/Dashboard.png" width="500"/>
-<img src="./wireframes/Dashboard-open-req.png" width="500"/>
+**As a** Centrepoint staff member  
+**I would like** to have requests appear in In-Form  
+**so that** the process of helping ex-residents is streamlined
 
 ## App flow
 
-<img src="./wireframes/app-flow.png" width="450"/>
+<img src="./wireframes/cpapp-flow.png" width="450"/>
 
 ## Database schema
+
+We would most likely want to revise the database schema if further work is done on the app.
 
 <img src="./wireframes/db-schema.png" width="300"/>
 
@@ -138,14 +86,10 @@ Fonts and colours were taken to match those at https://centrepoint.org.uk
 - Mobile-first web app
 - Should be able to work well on older smartphones with smaller screens
 
-### Platform: admin dashboard
-- Desktop web app
-- Office use friendly
-
 ### Tech stack
-- Front-end: HTML, CSS, Materialize, JavaScript (jQuery)
-- Back-end: Node.js, Hapi.js, Handlebars, Postgres
-- Authentication: Yoti
+- Front-end: HTML, CSS, Materialize, JavaScript
+- Back-end: Node.js, Hapi.js, Handlebars, Postgres, Salesforce API
+- Auth: Yoti
 
 ## Installation instructions
 
@@ -165,7 +109,7 @@ Fonts and colours were taken to match those at https://centrepoint.org.uk
 - Run `npm start` to start the server
 - Navigate to `http://localhost:9443/` in your browser
 
-#### In order to set up an HTTPS server
+#### Set up an HTTPS server
 - generate a key file for your certificate  ($ openssl genrsa -out key.pem 2048)
 - generate an intermediate file (csr)  ($ openssl req -new -key key.pem -out csr.pem)
 - generate a certificate file, using the key and csr ($ openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem)
