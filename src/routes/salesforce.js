@@ -24,7 +24,6 @@ module.exports = {
       let infoRequested = formHelper.checkInfoRequested(req.payload);
       let firstName = userHelper.getFirstName(req.pre.user.givenNames);
       infoRequested.name = firstName;
-
       if (infoRequested.rentalHistory) {
         const org = nforce.createConnection({
           clientId: process.env.SALESFORCE_KEY,
