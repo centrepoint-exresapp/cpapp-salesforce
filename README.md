@@ -55,7 +55,7 @@ An app to allow former Centrepoint residents access their Centrepoint housing in
 
 ## App flow
 
-<img src="./wireframes/cpapp-flow.png" width="450"/>
+<img src="./wireframes/cpapp-wireframe.png" width="450"/>
 
 ## Database schema
 
