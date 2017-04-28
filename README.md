@@ -21,10 +21,10 @@ This version of the app is connected with a sandbox of the Centrepoint instance 
 The following steps were required to set up the connection between this app and the sandbox:
 - Centrepoint provided a Sandbox environment with login credentials
 - Asssessment of the connection options, which are [documented here](./salesforce.md). Based on advice from a salesforce engineer, I went ahead with the Salesforce REST API
-- I created a [Connected App](https://developer.salesforce.com/page/Connected_Apps) using my salesforce developer account
-- I saved credentials from my Connected App and my login for the sandbox instance as environment variables in my local version of the app
-- I then used an npm module called nforce to handle the authentication with the salesforce sandbox
-- I discovered that it's necessary to have administrator privileges in the sandbox in order to be able to see the API field names and be able to write queries. In-Form, which is the homeless-specific version of Salesforce, has numerous custom fields
+- Create a [Connected App](https://developer.salesforce.com/page/Connected_Apps) using salesforce developer account
+- Save credentials from Connected App and login for the sandbox instance as environment variables in local version of the app
+- Use an npm module called [nforce](https://www.npmjs.com/package/nforce) to handle the authentication with the salesforce sandbox
+- Centrepoint granted me administrator privileges for the sandbox so I could see the API field names to be able to write queries. In-Form, which is the homeless-specific version of Salesforce, has numerous custom fields
 - Queries to the system are written in SOQL, which is a version of SQL (some syntax is different)
 
 At present the app is set up to query the system for the current client's accommodation history, and to dummy a response for raising a ticket in the system.
