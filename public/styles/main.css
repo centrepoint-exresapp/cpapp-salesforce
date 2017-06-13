@@ -165,3 +165,7 @@ h5 {
 .text-closed {
   color: rgb(180,180,180);
 }
+
+.clear {
+  clear:both;
+}
