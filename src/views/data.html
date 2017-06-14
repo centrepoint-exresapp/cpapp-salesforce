@@ -1,0 +1,68 @@
+{{!< layout/default}}
+{{> header}}
+
+<div class="container">
+
+  <div class="row clear">
+    {{#if name}}
+    <div class"col s12 l6 offset-l3">
+      <p class="center-align">{{name}}, thanks for contacting Centrepoint</p>
+    </div>
+    {{/if}}
+  </div>
+
+  <div class="row">
+    {{#if rentalHistory}}
+      <div class="col s12 l6 offset-l3">
+          <p class="center-align" style="font-weight:bold;">Accommodation history</p>
+            <p class="center-align">You were a resident at:<br>
+            5 Wilmer Dr, Bradford BD9 4AR<br>
+            From: {{accomHistory.start_date}}<br>
+            To: {{accomHistory.end_date}}</p>
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="row">
+    {{#if ticket}}
+    <div class="col s12 l6 offset-l3">
+      <ul class="center-align">You requested the following:
+      {{#if rentalArrears}}
+        <li><i class="tiny material-icons padding-right">done</i> A rental arrears report</li>
+      {{/if}}
+
+      {{#if rentalReference}}
+        <li><i class="tiny material-icons padding-right">done</i> A rental reference</li>
+      {{/if}}
+
+      {{#if otherRequests}}
+        <li><i class="tiny material-icons padding-right">done</i> {{otherRequests}}</li>
+      {{/if}}
+    </div>
+    {{/if}}
+  </div>
+
+    <div class="row">
+      {{#if email}}
+      <div class="col s12 l6 offset-l3">
+        <p class="center-align">We will repond using the email address you gave us:<br>
+        <span style="font-weight:bold;">{{email}}</span>
+        <br>You should hear from us within 24 hours</p>
+      </div>
+      {{/if}}
+    </div>
+
+    <div class="row">
+      {{#if mail}}
+      <div class="col s12 l6 offset-l3">
+        <p class="center-align">We will send a letter to you at the address you gave us:<br>
+        <span style="font-weight:bold;">{{mail}}</span>
+        <br>Please note that letters take about five working days</p>
+      </div>
+      {{/if}}
+    </div>
+
+    <div>
+      <p class="center-align" style='color:gray;font-size:12px;'>To protect your personal information, <br>please log out when you're done.</p>
+    </div>
+</div>

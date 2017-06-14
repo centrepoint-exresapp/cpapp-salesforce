@@ -3,6 +3,7 @@
 const hapi = require('hapi');
 const fs = require('fs');
 const path = require('path');
+const HapiAuthJWT2 = require('hapi-auth-jwt2');
 
 const inert = require('inert');
 const vision = require('vision');

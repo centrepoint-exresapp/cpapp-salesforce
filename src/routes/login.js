@@ -22,9 +22,9 @@ module.exports = {
         });
       }
       if (user.exists) {
-        if (user.admin === true) {
-          return reply.redirect('/dashboard');
-        }
+        // if (user.admin === true) {
+        //   return reply.redirect('/dashboard');
+        // }
         return reply.redirect('/info');
       }
       let newUser = Object.assign({}, user);
