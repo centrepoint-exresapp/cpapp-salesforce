@@ -6,13 +6,12 @@ const errorMessages = require('../constants/errorMessages.js');
 let localStorage = {}
 
 module.exports = function (token, callback) {
-  if (!localStorage.token) {
+  if (!localStorage[token]) {
     yotiClient.getClient()
     .getActivityDetails(token)
     .then((activityDetails) => {
     let user = userHelper.getUser(activityDetails);
-    localStorage.token = token;
-    localStorage.user = user;
+    localStorage[token] = user;
     userTable.getUserId(user, function (err, userData) {
       if (err) {
         callback(errorMessages.databaseError);
@@ -27,7 +26,7 @@ module.exports = function (token, callback) {
       callback(errorMessages.loginError);
     });
   } else {
-    callback (null, localStorage.user);
+    callback (null, localStorage[token]);
   }
 };
 
